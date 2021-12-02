@@ -1,65 +1,57 @@
 // Jawaban No 1
-// function nilai(nilai) {
-//   if (nilai >= 85) {
-//     console.log("indeksnya A");
-//   } else if (nilai >= 75 && nilai < 85) {
-//     console.log("indeksnya B");
-//   } else if (nilai >= 65 && nilai < 75) {
-//     console.log("indeksnya C");
-//   } else if (nilai >= 55 && nilai < 65) {
-//     console.log("indeksnya D");
-//   } else {
-//     console.log("indeksnya E");
-//   }
-// }
+function nilai(nilai) {
+  if (nilai >= 85) {
+    console.log("indeksnya A");
+  } else if (nilai >= 75 && nilai < 85) {
+    console.log("indeksnya B");
+  } else if (nilai >= 65 && nilai < 75) {
+    console.log("indeksnya C");
+  } else if (nilai >= 55 && nilai < 65) {
+    console.log("indeksnya D");
+  } else {
+    console.log("indeksnya E");
+  }
+}
 
-// nilai(99);
+nilai(99);
 
 // Jawaban No 2
-// var tanggal = 26;
-// var bulan = 8;
-// var tahun = 1994;
+var tanggal = 26;
+var bulan = 8;
+var tahun = 1994;
 
 // hasil "26 Agustus 1994"
 
-// var grade = "A";
+var grade = "A";
 
-// switch (bulan) {
-//   case 8:
-//     console.log(tanggal + " Agustus " + tahun);
-//     break;
+switch (bulan) {
+  case 8:
+    console.log(tanggal + " Agustus " + tahun);
+    break;
 
-//   case 9:
-//     console.log(tanggal + " September " + tahun);
-//     break;
-// }
+  case 9:
+    console.log(tanggal + " September " + tahun);
+    break;
+}
 
-// Soal Nomor 3
+// Jawaban Nomor 3
 
-// function countingStars(star) {
-//   let countStars = "";
-//   for (var i = 0; i <= star; i++) {
-//     for (var j = 0; j < i; j++) {
-//       countStars += "*";
-//     }
-//     countStars += "\n";
-//   }
-//   console.log(countStars);
-// }
+function countingStars(star) {
+  let countStars = "";
+  for (var i = 0; i <= star; i++) {
+    for (var j = 0; j < i; j++) {
+      countStars += "*";
+    }
+    countStars += "\n";
+  }
+  console.log(countStars);
+}
 
-// countingStars(4);
+countingStars(4);
 
-// Soal Nomor 4
-// Output untuk m = 5
+// Jawaban Nomor 4
 
-// 1 - I love programming
-// 2 - I love Javascript
-// 3 - I love VueJS
-// ===
-// 4 - I love programming
-// 5 - I love Javascript
-
-var m = 7;
+var m = 3;
 let stringText = "";
 let varText = "";
 var output;
@@ -77,8 +69,8 @@ for (var i = 0; i < m; i++) {
     varText = "";
     output = i % 3;
   }
-  console.log(output);
-  console.log("i " + i);
+  //   console.log(output);
+  //   console.log("i " + i);
   console.log(stringText);
   console.log(varText);
 }
