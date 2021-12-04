@@ -51,26 +51,46 @@ countingStars(4);
 
 // Jawaban Nomor 4
 
-var m = 3;
+var m = 7;
 let stringText = "";
 let varText = "";
 var output;
-for (var i = 0; i < m; i++) {
-  if (i % 2 === 1) {
-    stringText = "I love Javascript";
-    varText = "";
-    output = i % 2;
-  } else if (i % 3 === 2) {
-    stringText = "I love Vue";
-    varText = "=====";
-    output = i % 3;
-  } else if (i % 1 === 0) {
-    stringText = "I love Programming";
-    varText = "";
-    output = i % 3;
+// for (var i = 0; i < m; i++) {
+//   if (i % 2 === 1) {
+//     stringText = "I love Javascript";
+//     varText = "";
+//     output = i % 2;
+//   } else if (i % 3 === 2) {
+//     stringText = "I love Vue";
+//     varText = "=====";
+//     output = i % 3;
+//   } else if (i % 1 === 0) {
+//     stringText = "I love Programming";
+//     varText = "";
+//     output = i % 3;
+//   }
+//   //   console.log(output);
+//   //   console.log("i " + i);
+//   console.log(stringText);
+//   console.log(varText);
+// }
+
+for (var i = 1; i <= m; i++) {
+  j = i % 3;
+  switch (j) {
+    case 1:
+      console.log(i + " - I love programming");
+      break;
+    case 2:
+      console.log(i + " - I love javascript");
+      break;
+    default:
+      console.log(i + " - I love vuejs");
+      var equels = "";
+      for (var k = 0; k < i; k++) {
+        equels = equels + "=";
+      }
+      console.log(equels);
+      break;
   }
-  //   console.log(output);
-  //   console.log("i " + i);
-  console.log(stringText);
-  console.log(varText);
 }
