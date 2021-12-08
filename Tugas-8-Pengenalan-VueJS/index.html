@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ fullName }}
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+   var vm = new Vue({
+      el: '#app',
+      data: {
+        firstName : 'Tuanku',
+        lastName : 'Imam Bonjol'
+      },
+      computed : {
+        fullName : {
+          get(output){
+              output = `${this.firstName} ${this.lastName}`
+              return output
+          },
+          set(newValue){
+            var names = newValue.split(' ')
+            this.firstName = names[0]
+            let afterName = []
+            let output
+            for (let index = 1; index < names.length; index++) {
+              afterName.push(names[index])
+              const stringName = afterName.toString()
+              const replaceName = stringName.replace(/,/g,' ')
+              output = replaceName
+            }
+            console.log(output)
+            // if(names.length>2){
+            //   afterName = `${names[1]} ${names[2]}`
+            // }else{
+            //   afterName = names[names.length - 1]  
+            // }
+            this.lastName = output
+          }
+        }
+      },
+      methods : {}
+  })
+  </script>
+</body>
+</html>
