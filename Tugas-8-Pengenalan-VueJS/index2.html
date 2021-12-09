@@ -20,19 +20,17 @@
         a : 0
       },
       methods : {
-          openForm : function(){
-            // jika nilai > 10 maka prompt berhenti 
-              this.a = prompt("Masukkan nilai a") 
-          },
           loopForm: function(){
-            if(this.a<10){
-              for(var i = 0; i <this.a;i++){
-              let input = prompt("Masukkan")
-              let intInput = parseInt(input)
-              let output = this.a + intInput
-              this.a =  output
-              console.log(intInput)
-            }
+            this.a = 0
+            for(var i = 0; i <= this.a;i++){
+              if(this.a<10){
+                let input = prompt("Masukkan")
+                let intInput = parseInt(input)
+                let output = this.a + intInput
+                this.a =  output
+              }else{
+                return this.a
+              }
             }
           }
       }
