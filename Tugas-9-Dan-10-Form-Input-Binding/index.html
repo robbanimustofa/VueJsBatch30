@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+      <div>
+        <label for="">Masukkan Input</label>
+      </div>
+      <input type="text" v-model="searchStr"></input>
+    <li v-for="item in filterArray">{{item}}</li>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+   var vm = new Vue({
+      el: '#app',
+      data: {
+        books :[
+            'Kalkulus Dasar',
+            'Fisika Dasar',
+            'Aljabar Linier',
+            'Aljabar Abstrak',
+            'Algoritma Pemograman'
+        ],
+        searchStr:''
+      },
+      computed:{
+        //   Funct Filter Array
+          filterArray:function(){
+              return this.books.filter((item)=>{
+                let loItem = item.toLowerCase();
+                return loItem.match(this.searchStr)
+              })
+          }
+      },
+      methods : {
+
+      }
+  })
+  </script>
+</body>
+</html>
