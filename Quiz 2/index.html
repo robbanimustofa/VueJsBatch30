@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <div>
+            <label for="">Masukkan Input</label>
+        </div>
+        <input type="text" v-model="inputUser.name"></input>
+        <button onclick='App.add()' id="btn1">{{this.buttonName}}</button>
+        <li v-for="user,index in users" :key="index">{{index}} {{user.name}} <button onclick='App.edit(user)'>Edit</button>||<button onclick='App.delete(this.users)'>Delete</button></li>
+            <h5>{{this.users}}</h5>
+    </div>
+    <script>
+      const App = new Vue({
+        el: '#app',
+        data: {
+          users: [
+              {
+                  name: 'Muhammad Iqbal Mubarok'
+              },
+              {
+                  name: 'Aji Prayoga'
+              },
+              {
+                  name: 'Mustofa Robbani',
+              }
+          ],
+          inputUser:{name:''},
+          buttonName:'Tambah'
+        },
+        computed:{
+            
+        },
+        methods: {
+            add(){
+               let data = this.users
+               data.push(this.inputUser)
+               this.inputUser = {name:''}
+               console.log(data) 
+            },
+            edit(user){
+                this.buttonName = 'Edit';
+                this.inputUser.name = user.name
+                
+            }, 
+            delete(user){
+                let index = this.users.indexOf(user)
+                this.users.splice(index, 1)
+            }
+        }
+      })
+    </script>
+  </body>
+</html>
