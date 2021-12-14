@@ -13,8 +13,7 @@
         </div>
         <input type="text" v-model="inputUser.name"></input>
         <button onclick='App.add()' id="btn1">{{this.buttonName}}</button>
-        <li v-for="user,index in users" :key="index">{{index}} {{user.name}} <button onclick='App.edit(user)'>Edit</button>||<button onclick='App.delete(this.users)'>Delete</button></li>
-            <h5>{{this.users}}</h5>
+        <li v-for="user,index in users" :key="index">{{user.name}} <button onclick='App.edit(App.user)'>Edit</button>||<button onclick='App.delete(this.users)'>Delete</button></li>
     </div>
     <script>
       const App = new Vue({
@@ -46,7 +45,8 @@
             },
             edit(user){
                 this.buttonName = 'Edit';
-                this.inputUser.name = user.name
+                this.inputUser.name = this.users[0].name
+                console.log(this.inputUser)
                 
             }, 
             delete(user){
